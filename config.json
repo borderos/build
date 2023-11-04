@@ -1,0 +1,35 @@
+{
+    "Hostname": "borderos",
+    "Update": {
+        "Hostname": "10.254.10.1",
+        "HTTPPassword": "qIlwQquy0sc6i4Rq5iCf"
+    },
+    "Packages": [
+        "github.com/borderos/borderos/cmd/brd",
+        "github.com/gokrazy/gokrazy/cmd/dhcp"
+    ],
+    "PackageConfig": {
+        "github.com/gokrazy/gokrazy/cmd/randomd": {
+            "ExtraFileContents": {
+                "/etc/machine-id": "3ee4aef338d54892986b9736df463469\n"
+            }
+        },
+        "github.com/borderos/borderos/cmd/brd": {
+            "GoBuildFlags": [
+                "-ldflags=-s -w"
+            ],
+            "ExtraFilePaths": {
+                "/config/config.cue": "config.cue"
+            }
+        }
+    },
+    "SerialConsole": "ttyS0,115200",
+    "GokrazyPackages": [
+        "github.com/gokrazy/gokrazy/cmd/ntp",
+        "github.com/gokrazy/gokrazy/cmd/randomd"
+    ],
+    "KernelPackage": "github.com/borderos/kernel",
+    "FirmwarePackage": "",
+    "EEPROMPackage": "",
+    "InternalCompatibilityFlags": {}
+}
